@@ -1,5 +1,5 @@
 # Use the official Node.js image as the base image
-FROM node:18
+FROM node:22
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -8,10 +8,11 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install && npm install -g concurrently
 
-# Copy the rest of the application code to the working directory
-COPY . .
+# Copy the source directory and tsconfig.json file
+COPY tsconfig.json ./
+COPY src ./src
 
 # Build the TypeScript code
 RUN npm run build
@@ -20,4 +21,4 @@ RUN npm run build
 EXPOSE 3000
 
 # Command to run the application
-CMD ["node", "dist/app.main.js"]
+CMD ["npm", "start"]

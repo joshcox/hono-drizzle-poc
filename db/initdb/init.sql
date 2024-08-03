@@ -5,15 +5,14 @@ WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'bluffcountrybeef')\ge
 -- Connect to the database
 \c bluffcountrybeef
 
+-- Create the uuid-ossp extension, which is used to generate UUIDs
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
+-- Rename the public schema to bluffcountrybeef and set the search path to bluffcountrybeef, public
 ALTER SCHEMA public RENAME TO bluffcountrybeef;
 ALTER DATABASE bluffcountrybeef SET search_path TO bluffcountrybeef, public;
-ALTER SYSTEM SET wal_level TO 'logical';
-SELECT pg_reload_conf();
 
--- Your table creation statements here, for example:
 CREATE TABLE IF NOT EXISTS bluffcountrybeef.user (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL
+  uuid UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  name VARCHAR(100) NOT NULL
 );
