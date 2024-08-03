@@ -4,6 +4,8 @@
   "description": "A project for Bluff Country Beef",
   "main": "index.js",
   "scripts": {
+    "start": "node dist/app.main.js",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,13 +18,16 @@
     "koa": "^2.15.3",
     "koa-bodyparser": "^4.4.1",
     "koa-router": "^12.0.1",
+    "reflect-metadata": "^0.2.2",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.20",
     "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/koa": "^2.15.0",
     "@types/koa-bodyparser": "^4.3.12",
     "@types/koa-router": "^7.4.8",
-    "@types/node": "^22.0.0",
+    "@types/node": "^22.1.0",
     "typescript": "^5.5.4"
   }
 }

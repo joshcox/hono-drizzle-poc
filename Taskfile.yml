@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  clean:
+    desc: "Clean the database by clearing the tmp/db directory"
+    cmds:
+      - docker compose down
+      - docker volume rm db-data || true
+      # - docker rm $(docker ps -a -q --filter name=server-db) || true
+      # - docker volume create db-data
+      # - docker compose build --no-cache db
+      - docker compose up -d
