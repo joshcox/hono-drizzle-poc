@@ -1,6 +1,7 @@
 import { serve } from "@hono/node-server";
 import { OpenAPIHono } from "@hono/zod-openapi";
 import userApp from "./user/user.app";
+import { swaggerUI } from "@hono/swagger-ui";
 
 const app = new OpenAPIHono();
 
@@ -12,7 +13,9 @@ app.doc('/doc', {
     version: '1.0.0',
     title: 'Bluff Country Beef API',
   },
-})
+});
+
+app.get('/ui', swaggerUI({ url: '/doc' }))
 
 serve({
   async fetch(request: Request) {
