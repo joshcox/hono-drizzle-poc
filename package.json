@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "A project for Bluff Country Beef",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node dist/app.main.js",
-    "start:dev": "node --watch dist/app.main.js",
+    "start": "node dist/app.js",
+    "start:dev": "node --watch dist/app.js",
     "build": "tsc",
     "build:watch": "tsc --watch",
     "dev": "concurrently \"npm run build:watch\" \"npm run start:dev\"",
@@ -18,24 +19,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "koa": "^2.15.3",
-    "koa-bodyparser": "^4.4.1",
-    "koa-router": "^12.0.1",
+    "@hono/node-server": "^1.12.0",
+    "@hono/zod-openapi": "^0.15.1",
+    "@hono/zod-validator": "^0.2.2",
+    "hono": "^4.5.3",
     "pg": "^8.12.0",
     "reflect-metadata": "^0.2.2",
-    "sqlite3": "^5.1.7",
-    "typeorm": "^0.3.20",
     "uuid": "^10.0.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/koa": "^2.15.0",
-    "@types/koa-bodyparser": "^4.3.12",
-    "@types/koa-router": "^7.4.8",
     "@types/node": "^22.1.0",
     "@types/uuid": "^10.0.0",
-    "nodemon": "^3.1.4",
-    "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }
 }
