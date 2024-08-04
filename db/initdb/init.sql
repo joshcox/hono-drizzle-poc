@@ -11,8 +11,3 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 -- Rename the public schema to bluffcountrybeef and set the search path to bluffcountrybeef, public
 ALTER SCHEMA public RENAME TO bluffcountrybeef;
 ALTER DATABASE bluffcountrybeef SET search_path TO bluffcountrybeef, public;
-
-CREATE TABLE IF NOT EXISTS bluffcountrybeef.user (
-  uuid UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  name VARCHAR(100) NOT NULL
-);

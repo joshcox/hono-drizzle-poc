@@ -1,6 +1,6 @@
 import { serve } from "@hono/node-server";
 import { OpenAPIHono } from "@hono/zod-openapi";
-import userApp from "./user/app/user.app.js";
+import userApp from "./user/app/user.app";
 
 const app = new OpenAPIHono();
 

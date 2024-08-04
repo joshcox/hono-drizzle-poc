@@ -1,5 +1,5 @@
 import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
-import postUserCommand from "./post.user.command.js";
+import postUserCommand from "./post.user.command";
 
 const PostUserBodySchema = z
   .object({
