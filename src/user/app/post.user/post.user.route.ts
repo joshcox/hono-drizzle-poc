@@ -9,11 +9,18 @@ const PostUserBodySchema = z
         description: 'User name',
         example: 'John Doe',
       }),
+    email: z
+      .string()
+      .openapi({
+        description: 'User email',
+        example: 'john.doe@example.com',
+      }),
   })
   .openapi({
     description: 'User body schema',
     example: {
       name: 'John Doe',
+      email: 'john.doe@example.com',
     },
   });
 
@@ -36,12 +43,14 @@ export default (app: OpenAPIHono) => app.openapi(
         content: {
           'application/json': {
             schema: z.object({
+              uuid: z.string(),
               name: z.string(),
+              email: z.string(),
             })
           },
         },
       },
     },
   }),
-  (c) => c.json(postUserCommand(c.req.valid('json')))
+  async (c) => c.json(await postUserCommand(c.req.valid('json')))
 );

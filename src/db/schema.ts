@@ -1,1 +1,1 @@
-export { user } from '../user/db/user.record';
+export { user } from '../user/user.db.schema';
