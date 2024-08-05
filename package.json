@@ -4,8 +4,8 @@
   "description": "A project for Bluff Country Beef",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/app.js",
-    "start:dev": "node --watch dist/app.js",
+    "start": "node dist/server.js",
+    "start:dev": "node --watch dist/server.js",
     "build": "tsc",
     "build:watch": "tsc --watch",
     "dev": "concurrently \"npm run build:watch\" \"npm run start:dev\"",

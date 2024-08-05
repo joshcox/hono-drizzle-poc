@@ -1,13 +1,9 @@
 import { v4 } from "uuid";
-import connection from "../../../db/connection";
+import connection from "../../../db/db.connection";
 import { user } from "../../user.db.schema";
 import { User } from "../../domain/user";
 
-type Params = {
-  name: string;
-}
-
-export default async (params: Params): Promise<User> => {
+export default async (params: Pick<User, 'name'>): Promise<User> => {
   const db = await connection;
 
   const [result] = await db.insert(user).values({

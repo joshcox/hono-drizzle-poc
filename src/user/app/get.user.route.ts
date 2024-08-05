@@ -1,16 +1,16 @@
-import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
-
-type User = {
-  name: string;
-};
+import { createRoute, z } from "@hono/zod-openapi";
+import app from "../../app";
+import { User } from "../domain/user";
 
 const getUser = (): User => {
   return {
+    uuid: '123',
     name: 'Josh',
+    email: 'josh@example.com',
   }
 };
 
-export default (app: OpenAPIHono) => app.openapi(
+export default app.openapi(
   createRoute({
     path: '/user',
     method: 'get',

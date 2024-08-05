@@ -1,11 +1,11 @@
-import { serve } from "@hono/node-server";
 import { OpenAPIHono } from "@hono/zod-openapi";
-import userApp from "./user/user.app";
+import { postUser, getUser } from "./user/user.app";
 import { swaggerUI } from "@hono/swagger-ui";
 
 const app = new OpenAPIHono();
 
-app.route('/', userApp(app));
+app.route('/', postUser);
+app.route('/', getUser);
 
 app.doc('/doc', {
   openapi: '3.0.0',
@@ -15,12 +15,6 @@ app.doc('/doc', {
   },
 });
 
-app.get('/ui', swaggerUI({ url: '/doc' }))
+app.get('/ui', swaggerUI({ url: '/doc' }));
 
-serve({
-  async fetch(request: Request) {
-    console.log(request.url);
-    return app.fetch(request);
-  },
-  port: 3000,
-});
+export default app;

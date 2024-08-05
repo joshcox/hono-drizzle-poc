@@ -1,5 +1,5 @@
 import { migrate } from 'drizzle-orm/node-postgres/migrator';
-import db, { client } from '../src/db/connection';
+import db, { client } from '../src/db/db.connection';
 
 const main = async () => {
   await migrate(await db, { migrationsFolder: './migrations' });

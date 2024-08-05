@@ -1,5 +1,6 @@
-import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
+import { createRoute, z } from "@hono/zod-openapi";
 import postUserCommand from "./post.user.command";
+import app from "../../../app";
 
 const PostUserBodySchema = z
   .object({
@@ -24,7 +25,7 @@ const PostUserBodySchema = z
     },
   });
 
-export default (app: OpenAPIHono) => app.openapi(
+export default app.openapi(
   createRoute({
     path: '/user',
     method: 'post',
