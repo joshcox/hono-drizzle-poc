@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2022",
     "module": "CommonJS",
     "moduleResolution": "Node",
     "lib": [
-      "ES2022"
+      "ES2022",
+      "ESNext.Disposable"
     ],
     "outDir": "./dist",
     "rootDir": "./src",
@@ -25,7 +26,7 @@
   },
   "include": [
     "src/**/*"
-, "drizzle.config.ts"  ],
+  ],
   "exclude": [
     "node_modules",
     "dist"

@@ -1,0 +1,17 @@
+{
+  "name": "Bluff Country Beef Dev Container",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "api",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-typescript-tslint-plugin"
+      ]
+    }
+  },
+  "forwardPorts": [3000, 5432, 8080],
+  "postCreateCommand": "npm install"
+}

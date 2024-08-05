@@ -11,8 +11,7 @@ COPY package*.json ./
 RUN npm install && npm install -g concurrently
 
 # Copy the source directory and tsconfig.json file
-COPY tsconfig.json ./
-COPY src ./src
+COPY . .
 
 # Build the TypeScript code
 RUN npm run build
@@ -21,4 +20,4 @@ RUN npm run build
 EXPOSE 3000
 
 # Command to run the application
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]

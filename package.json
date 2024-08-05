@@ -9,9 +9,9 @@
     "build": "tsc",
     "build:watch": "tsc --watch",
     "dev": "concurrently \"npm run build:watch\" \"npm run start:dev\"",
-    "migrate": "drizzle-kit migrate",
-    "migrate:generate": "drizzle-kit generate",
-    "migrate:generate:custom": "drizzle-kit generate --custom",
+    "migrate": "drizzle-kit --config ./src/db/drizzle.config.ts migrate",
+    "migrate:generate": "drizzle-kit --config ./src/db/drizzle.config.ts generate",
+    "migrate:generate:custom": "drizzle-kit --config ./src/db/drizzle.config.ts generate --custom",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
