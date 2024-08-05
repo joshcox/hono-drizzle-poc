@@ -1,14 +1,6 @@
 import { createRoute, z } from "@hono/zod-openapi";
-import app from "../../app";
-import { User } from "../domain/user";
-
-const getUser = (): User => {
-  return {
-    uuid: '123',
-    name: 'Josh',
-    email: 'josh@example.com',
-  }
-};
+import app from "../../../app";
+import getUserQuery from "./get.user.query";
 
 export default app.openapi(
   createRoute({
@@ -27,5 +19,5 @@ export default app.openapi(
       },
     },
   }),
-  (c) => c.json(getUser())
+  (c) => c.json(getUserQuery())
 );

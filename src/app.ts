@@ -1,8 +1,11 @@
 import { OpenAPIHono } from "@hono/zod-openapi";
-import { postUser, getUser } from "./user/user.app";
+import { postUser, getUser } from "./user/user.routes";
 import { swaggerUI } from "@hono/swagger-ui";
+import { logger } from "hono/logger";
 
 const app = new OpenAPIHono();
+
+app.use(logger());
 
 app.route('/', postUser);
 app.route('/', getUser);
