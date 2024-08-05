@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/server.js",
-    "start:dev": "node --watch dist/server.js",
+    "start:dev": "node --inspect --watch dist/server.js",
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "dev": "concurrently \"npm run build:watch\" \"npm run start:dev\"",
     "migrate": "drizzle-kit --config ./src/db/drizzle.config.ts migrate",
     "migrate:generate": "drizzle-kit --config ./src/db/drizzle.config.ts generate",
     "migrate:generate:custom": "drizzle-kit --config ./src/db/drizzle.config.ts generate --custom",

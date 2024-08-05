@@ -1,6 +1,6 @@
 import { createRoute, z } from "@hono/zod-openapi";
-import app from "../../../app";
 import getUserQuery from "./get.user.query";
+import app from "../../../app";
 
 export default app.openapi(
   createRoute({
