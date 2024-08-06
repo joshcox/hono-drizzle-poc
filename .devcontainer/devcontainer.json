@@ -7,9 +7,14 @@
     "vscode": {
       "extensions": [
         "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
-        "ms-vscode.vscode-typescript-tslint-plugin"
+        "esbenp.prettier-vscode"
       ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+      "plugins": ["git", "history-search-multi-word"]
+
     }
   },
   "forwardPorts": [3000, 5432, 8080],

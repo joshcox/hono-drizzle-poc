@@ -1,6 +1,9 @@
 # Use the official Node.js image as the base image
 FROM node:22
 
+# Install gnupg2 to be able to sign git commits
+RUN apt-get update && apt-get install gnupg2 -y
+
 # Set the working directory inside the container
 WORKDIR /app
 
