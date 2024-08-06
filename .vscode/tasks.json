@@ -9,10 +9,26 @@
         "$tsc-watch"
       ],
       "group": "build",
-      "label": "tsc: watch - tsconfig.json",
+      "label": "tsc:watch",
       "detail": "tsc --watch",
+      "icon": {
+        "id": "wrench",
+        "color": "terminal.ansiYellow"
+      },
       "runOptions": {
         "instanceLimit": 1,
+        "runOn": "folderOpen"
+      }
+    },
+    {
+      "type": "npm",
+      "script": "install",
+      "group": "none",
+      "problemMatcher": [],
+      "label": "npm: install",
+      "detail": "npm install",
+      "isBackground": true,
+      "runOptions": {
         "runOn": "folderOpen"
       }
     }

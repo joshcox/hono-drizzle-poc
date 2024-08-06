@@ -1,20 +1,21 @@
 services:
   api:
     build:
-      context: .
-      dockerfile: docker/Dockerfile
+      context: ..
+      dockerfile: ./.devcontainer/Dockerfile
     ports:
       - 3000:3000
     volumes:
-      - .:/app
+      - ..:/app
       - /app/node_modules
+      - /app/dist
     command: npm run start:dev
     depends_on:
       - db
 
   db:
     image: postgres:latest
-    # restart: always
+    restart: always
     platform: linux/amd64
     environment:
       POSTGRES_DB: bluffcountrybeef

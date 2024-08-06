@@ -1,23 +1,38 @@
 {
-  "name": "Bluff Country Beef Dev Container",
-  "dockerComposeFile": "../docker-compose.yml",
+  "name": "Dev Container",
+  "dockerComposeFile": "./docker-compose.yml",
   "service": "api",
-  "runServices": ["db"],
   "workspaceFolder": "/app",
   "customizations": {
     "vscode": {
-      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2,
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": "always",
+          "source.addMissingImports.ts": "always"
+        }
+      }
     }
   },
+  "remoteUser": "nerd",
   "mounts": [
-    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
+    // Forward SSH agent to nerd user in container
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/nerd/.ssh,type=bind,consistency=cached",
+    // Forward git config to nerd user in container
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/home/nerd/.gitconfig,type=bind,consistency=cached"
   ],
   "remoteEnv": {
+    // Forward SSH agent to nerd user in container
     "SSH_AUTH_SOCK": "/ssh-agent"
   },
   "features": {
+    "ghcr.io/nils-geistmann/devcontainers-features/zsh:0": {
+      "theme": "robbyrussell",
+      "plugins": ["git", "history-search-multi-word"]
+    },
     "ghcr.io/devcontainers-contrib/features/go-task:1": {}
   },
-  "forwardPorts": [3000, 5432, 8080],
-  "postCreateCommand": "npm install"
+  "forwardPorts": [3000, 5432, 8080]
 }
