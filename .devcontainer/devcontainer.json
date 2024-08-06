@@ -2,20 +2,18 @@
   "name": "Bluff Country Beef Dev Container",
   "dockerComposeFile": "../docker-compose.yml",
   "service": "api",
+  "runServices": ["db"],
   "workspaceFolder": "/app",
   "customizations": {
     "vscode": {
-      "extensions": [
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode"
-      ]
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
     }
   },
   "features": {
     "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
       "plugins": ["git", "history-search-multi-word"]
-
-    }
+    },
+    "ghcr.io/devcontainers-contrib/features/go-task:1": {}
   },
   "forwardPorts": [3000, 5432, 8080],
   "postCreateCommand": "npm install"
