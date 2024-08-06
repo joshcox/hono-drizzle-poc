@@ -9,10 +9,13 @@
       "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
     }
   },
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
+  ],
+  "remoteEnv": {
+    "SSH_AUTH_SOCK": "/ssh-agent"
+  },
   "features": {
-    "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
-      "plugins": ["git", "history-search-multi-word"]
-    },
     "ghcr.io/devcontainers-contrib/features/go-task:1": {}
   },
   "forwardPorts": [3000, 5432, 8080],
