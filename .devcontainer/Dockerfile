@@ -28,10 +28,6 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME \
     && chown -R $USERNAME:$USERNAME /app
 
-# https://www.kenmuse.com/blog/avoiding-dubious-ownership-in-dev-containers/
-# Add current folder to git's safe.directory to avoid ownership issues with our nerd user
-RUN git config --global --add safe.directory /app
-
 # Set the default user. Omit if you want to keep the default as root.
 USER $USERNAME
 
