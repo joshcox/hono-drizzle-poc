@@ -22,7 +22,9 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx"
   },
   "include": [
     "src/**/*"

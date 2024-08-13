@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/server.js",
-    "start:dev": "node --inspect --watch dist/server.js",
+    "start:dev": "node --inspect --watch dist/server.js > app.log 2>&1",
     "build": "tsc",
     "build:watch": "tsc --watch",
     "migrate": "drizzle-kit --config ./src/db/drizzle.config.ts migrate",

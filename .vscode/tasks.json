@@ -31,6 +31,18 @@
       "runOptions": {
         "runOn": "folderOpen"
       }
+    },
+    {
+      "label": "tail app.log",
+      "type": "shell",
+      "command": "tail -f app.log",
+      "group": "none",
+      "problemMatcher": [],
+      "detail": "Display the app.log file using tail command",
+      "isBackground": true,
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
     }
   ]
 }

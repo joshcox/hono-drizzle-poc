@@ -12,6 +12,9 @@ services:
     command: npm run start:dev
     depends_on:
       - db
+    environment:
+      DATABASE_URL: postgres://user:password@db:5432/bluffcountrybeef
+      NODE_ENV: development
 
   db:
     image: postgres:latest

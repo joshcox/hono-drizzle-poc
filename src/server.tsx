@@ -1,14 +1,17 @@
 import { serve } from "@hono/node-server";
 import { zValidator } from "@hono/zod-validator";
 import { Context, Hono, Next } from "hono";
+import { jsxRenderer } from "hono/jsx-renderer";
 import { logger } from "hono/logger";
 import { z } from "zod";
 import Application from "./application";
 import Database from "./database";
 import "./middleware";
+import Main from "./ui/Main";
 
 export const EnvironmentSchema = z.object({
   PORT: z.coerce.number().default(3000),
+  DATABASE_URL: z.string().default("postgres://user:password@localhost:5432/bluffcountrybeef"),
 });
 
 export interface AppContext extends Context {
@@ -43,6 +46,18 @@ class App {
       context.set('query', query);
       await next();
     })
+    .use('/app/*', jsxRenderer(({ children }) => (
+      <html>
+        <body>
+          <h1>Bluff Country Beef 2</h1>
+          <>{children}</>
+        </body>
+      </html>
+    )))
+    .route(
+      '/app',
+      new Hono<AppContext>().get('/', (c) => c.render(<Main />))
+    )
     .route(
       "/users",
       new Hono<AppContext>()
