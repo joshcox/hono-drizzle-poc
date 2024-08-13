@@ -4,3 +4,4 @@
 .env
 /db/tmp
 /tmp
+app.log
