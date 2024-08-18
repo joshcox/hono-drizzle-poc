@@ -10,31 +10,9 @@ services:
       - /app/node_modules
       - /app/dist
     command: tail -f /dev/null
-    depends_on:
-      - db
     environment:
-      DATABASE_URL: postgres://user:password@db:5432/bluffcountrybeef
+      DATABASE_PATH: /app/database.sqlite
       NODE_ENV: development
-
-  db:
-    image: postgres:latest
-    restart: always
-    platform: linux/amd64
-    environment:
-      POSTGRES_DB: bluffcountrybeef
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-    volumes:
-      - db-data:/var/lib/postgresql/data
-      - ../db/initdb:/docker-entrypoint-initdb.d
-    ports:
-      - 3001:5432
-
-  # adminer:
-  #   image: adminer
-  #   restart: always
-  #   ports:
-  #     - 3002:8080
 
 volumes:
   db-data:

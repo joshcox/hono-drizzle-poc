@@ -1,26 +1,24 @@
 import { eq } from "drizzle-orm";
 import { v4 } from "uuid";
 import { User } from "../../domain";
-import Database, { DB } from "../database";
+import { DatabaseError } from "../../error";
+import DatabaseManager, { DB } from "../database";
 
 export const create = (db: DB) => async (user: Omit<User, "uuid">) => {
-  const result = await db.insert(Database.schema.user).values({ ...user, uuid: v4() }).returning();
-  const createdUser = result.shift();
+  const result = await db.insert(DatabaseManager.schema.user).values({ ...user, uuid: v4() }).returning().get();
 
-  if (!createdUser) {
-    throw new Error("User not created");
+  if (!result) {
+    throw new DatabaseError("User not created");
   }
 
-  return createdUser;
+  return result;
 };
 
 export const readOne = (db: DB) => async (uuid: string) => {
-  const result = await db.query.user.findFirst({
-    where: eq(Database.schema.user.uuid, uuid),
-  });
+  const result = await db.select().from(DatabaseManager.schema.user).where(eq(DatabaseManager.schema.user.uuid, uuid)).get();
 
   if (!result) {
-    throw new Error("User not found");
+    throw new DatabaseError("User not found");
   }
 
   return result;

@@ -1,15 +1,10 @@
 import type { Config } from 'drizzle-kit';
 
 export default {
-  schema: './src/db/schema.ts',
+  schema: './src/infra/database.schema.ts',
   out: './db/migrations',
-  dialect: 'postgresql',
-  verbose: true,
+  dialect: 'sqlite',
   dbCredentials: {
-    host: 'localhost',
-    user: 'user',
-    password: 'password',
-    database: 'bluffcountrybeef',
-    ssl: false
+    url: './database.sqlite',
   },
 } satisfies Config;

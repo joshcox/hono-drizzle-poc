@@ -8,7 +8,9 @@
  * @TODO Consider adding lazy loading to each repository function.
  */
 
+import { DatabaseError } from "../error";
 import { DB } from "./database";
+import * as todo from "./repository/todo";
 import * as user from "./repository/user";
 
 /**
@@ -40,6 +42,20 @@ type ConnectedRepo<T extends UnconnectedRepo> = {
 };
 
 /**
+ * Wraps a connected function with a try/catch that normalizes any thrown values into a DatabaseError and rethrows.
+ */
+const withDatabaseError = <T extends (...args: any) => any>(fn: T): T => {
+  return (async (...args: Parameters<T>): Promise<ReturnType<T>> => {
+    try {
+      return await fn(...args);
+    } catch (error) {
+      throw new DatabaseError(error instanceof Error ? error.message : String(error), { cause: error});
+    }
+  }) as T;
+};
+
+
+/**
  * Connects all repositories in a deep object to a database or transaction client.
  * The RepoConfiguration is a deep object of 
  */
@@ -47,7 +63,7 @@ const connect = <T extends UnconnectedRepo>(db: DB, unconnectedRepo: T): Connect
   <ConnectedRepo<T>>Object.fromEntries(
     Object.entries(unconnectedRepo).map(([k, v]) => [
       k,
-      typeof v === 'function' ? v(db) : connect(db, v)
+      typeof v === 'function' ? withDatabaseError(v(db)) : connect(db, v)
     ])
   );
 
@@ -67,5 +83,6 @@ const connect = <T extends UnconnectedRepo>(db: DB, unconnectedRepo: T): Connect
  * ```
  */
 export default (db: DB) => connect(db, {
-  user
+  user,
+  todo
 });

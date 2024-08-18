@@ -8,9 +8,9 @@
     "start:dev": "node --inspect --watch dist/server.js",
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "migrate": "drizzle-kit --config ./src/db/drizzle.config.ts migrate",
-    "migrate:generate": "drizzle-kit --config ./src/db/drizzle.config.ts generate",
-    "migrate:generate:custom": "drizzle-kit --config ./src/db/drizzle.config.ts generate --custom",
+    "migrate": "drizzle-kit --config ./db/drizzle.config.ts migrate",
+    "migrate:generate": "drizzle-kit --config ./db/drizzle.config.ts generate",
+    "migrate:generate:custom": "drizzle-kit --config ./db/drizzle.config.ts generate --custom",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -21,23 +21,20 @@
   "license": "ISC",
   "dependencies": {
     "@hono/node-server": "^1.12.0",
-    "@hono/swagger-ui": "^0.4.0",
-    "@hono/zod-openapi": "^0.15.1",
     "@hono/zod-validator": "^0.2.2",
+    "better-sqlite3": "^11.1.2",
     "drizzle-orm": "^0.32.1",
     "hono": "^4.5.3",
-    "pg": "^8.12.0",
-    "postgres": "^3.4.4",
     "reflect-metadata": "^0.2.2",
-    "typeorm": "^0.3.20",
     "uuid": "^10.0.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
     "@types/node": "^22.1.0",
-    "@types/pg": "^8.11.6",
     "@types/uuid": "^10.0.0",
     "drizzle-kit": "^0.23.1",
+    "node-gyp": "^10.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }

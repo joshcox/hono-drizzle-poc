@@ -1,12 +1,19 @@
 {
   "version": "7",
-  "dialect": "postgresql",
+  "dialect": "sqlite",
   "entries": [
     {
       "idx": 0,
-      "version": "7",
-      "when": 1722753033647,
-      "tag": "0000_light_lake",
+      "version": "6",
+      "when": 1723950682699,
+      "tag": "0000_abnormal_bloodstorm",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1723950903668,
+      "tag": "0001_curvy_madame_hydra",
       "breakpoints": true
     }
   ]
