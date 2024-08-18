@@ -1,4 +1,4 @@
-import { sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
 export const user = sqliteTable("user", {
   uuid: text("uuid").primaryKey(),
@@ -10,10 +10,15 @@ export const todo = sqliteTable("todo", {
   uuid: text("id").primaryKey(),
   title: text("title").notNull(),
   description: text("description"),
-  userUuid: text("userId").notNull(),
-  status: text("status", { enum: ['not started', 'in progress', 'done', 'archived'] }).notNull().$default(() => 'not started'),
   createdAt: text("createdAt").notNull(),
   updatedAt: text("updatedAt").notNull(),
+  archived: integer("active", { mode: "boolean" }).notNull().default(true),
+  working: integer("working", { mode: "boolean" }).notNull().default(true),
 });
 
-
+export const todo_time_log = sqliteTable("todo_time_log", {
+  uuid: text("id").primaryKey(),
+  todo_uuid: text("todoId").notNull(),
+  start: text("start").notNull(),
+  end: text("end").notNull(),
+});

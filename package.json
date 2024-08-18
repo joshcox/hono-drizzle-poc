@@ -8,6 +8,7 @@
     "start:dev": "node --inspect --watch dist/server.js",
     "build": "tsc",
     "build:watch": "tsc --watch",
+    "dk": "drizzle-kit --config ./db/drizzle.config.ts",
     "migrate": "drizzle-kit --config ./db/drizzle.config.ts migrate",
     "migrate:generate": "drizzle-kit --config ./db/drizzle.config.ts generate",
     "migrate:generate:custom": "drizzle-kit --config ./db/drizzle.config.ts generate --custom",
@@ -36,6 +37,7 @@
     "drizzle-kit": "^0.23.1",
     "node-gyp": "^10.2.0",
     "ts-node": "^10.9.2",
+    "typed-htmx": "^0.3.1",
     "typescript": "^5.5.4"
   }
 }
