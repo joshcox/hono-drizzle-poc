@@ -12,12 +12,10 @@
       "label": "tsc:watch",
       "detail": "tsc --watch",
       "icon": {
-        "id": "wrench",
         "color": "terminal.ansiYellow"
       },
       "runOptions": {
         "instanceLimit": 1,
-        "runOn": "folderOpen"
       }
     },
     {
@@ -40,9 +38,6 @@
       "problemMatcher": [],
       "detail": "Display the app.log file using tail command",
       "isBackground": true,
-      "runOptions": {
-        "runOn": "folderOpen"
-      }
     }
   ]
 }

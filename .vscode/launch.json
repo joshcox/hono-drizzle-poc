@@ -9,6 +9,34 @@
       "address": "localhost",
       "localRoot": "${workspaceFolder}",
       "remoteRoot": "/app"      
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Start",
+      "program": "${workspaceFolder}/dist/server.js",
+      "preLaunchTask": "tsc:watch",
+      "outFiles": [
+        "${workspaceFolder}/dist/**/*.js"
+      ],
+      "cwd": "${workspaceFolder}/dist",
+      
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Start Dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "start:dev"
+      ],
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/app",
+      "preLaunchTask": "tsc:watch",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
     }
   ]
 }

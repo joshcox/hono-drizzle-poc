@@ -9,7 +9,7 @@ services:
       - ..:/app
       - /app/node_modules
       - /app/dist
-    command: npm run start:dev
+    command: tail -f /dev/null
     depends_on:
       - db
     environment:
@@ -28,13 +28,13 @@ services:
       - db-data:/var/lib/postgresql/data
       - ../db/initdb:/docker-entrypoint-initdb.d
     ports:
-      - 5432:5432
+      - 3001:5432
 
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 3002:8080
 
 volumes:
   db-data:

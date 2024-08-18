@@ -34,6 +34,6 @@
     },
     "ghcr.io/devcontainers-contrib/features/go-task:1": {}
   },
-  "forwardPorts": [3000, 5432, 8080, 8081],
-  "postCreateCommand": "sudo git config --system --add safe.directory ${containerWorkspaceFolder}"
+  "forwardPorts": [3000, 3001],
+  "postCreateCommand": "sudo git config --system --add safe.directory ${containerWorkspaceFolder} && sudo chown -R nerd:nerd /app /app/node_modules /app/dist"
 }
