@@ -16,9 +16,9 @@ export const todo = sqliteTable("todo", {
   working: integer("working", { mode: "boolean" }).notNull().default(true),
 });
 
-export const todo_time_log = sqliteTable("todo_time_log", {
-  uuid: text("id").primaryKey(),
-  todo_uuid: text("todoId").notNull(),
+export const todo_work_log = sqliteTable("todo_work_log", {
+  uuid: text("uuid").primaryKey(),
+  todo_uuid: text("todo_uuid").notNull(),
   start: text("start").notNull(),
-  end: text("end").notNull(),
+  end: text("end")
 });

@@ -1,9 +1,10 @@
 import { DatabasePort, Todo, User } from "./domain";
+import DatabaseManager from "./infra/database";
 
 export default class Application {
   constructor(private database: DatabasePort) {
   }
-  
+
   query = {
     getUser: async (uuid: string) =>
       this.database.repository.user.readOne(uuid),
@@ -21,10 +22,20 @@ export default class Application {
 
     removeTodo: async (uuid: string) =>
       this.database.repository.todo.remove(uuid),
-    startWork: async (uuid: string) =>
-      this.database.repository.todo.setWorking(uuid, true),
-    stopWork: async (uuid: string) =>
-      this.database.repository.todo.setWorking(uuid, false),
+    startWork: async (uuid: string) => {
+      return await DatabaseManager.transaction(async (_, repository) => {
+        const todo = await repository.todo.setWorking(uuid, true);
+        await repository.todoWork.startWork(todo, new Date());
+        return todo;
+      })
+    },
+    stopWork: async (uuid: string) => {
+      return await DatabaseManager.transaction(async (_, repository) => {
+        const todo = await repository.todo.setWorking(uuid, false);
+        await repository.todoWork.stopWork(todo, new Date());
+        return todo;
+      });
+    },
     createUser: async (user: Omit<User, "uuid">) =>
       this.database.repository.user.create(user),
   };

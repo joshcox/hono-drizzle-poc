@@ -8,11 +8,11 @@ CREATE TABLE `todo` (
 	`working` integer DEFAULT true NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE `todo_time_log` (
-	`id` text PRIMARY KEY NOT NULL,
-	`todoId` text NOT NULL,
+CREATE TABLE `todo_work_log` (
+	`uuid` text PRIMARY KEY NOT NULL,
+	`todo_uuid` text NOT NULL,
 	`start` text NOT NULL,
-	`end` text NOT NULL
+	`end` text
 );
 --> statement-breakpoint
 CREATE TABLE `user` (

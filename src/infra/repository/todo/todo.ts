@@ -1,8 +1,8 @@
 import { eq } from "drizzle-orm";
 import { v4 } from "uuid";
-import { Todo } from "../../domain";
-import { DatabaseError } from "../../error";
-import DatabaseManager, { DB } from "../database";
+import { Todo } from "../../../domain";
+import { DatabaseError } from "../../../error";
+import DatabaseManager, { DB } from "../../database";
 
 type TodoRecord = typeof DatabaseManager.schema.todo.$inferSelect
 const toDomain = (todo: TodoRecord): Todo => {

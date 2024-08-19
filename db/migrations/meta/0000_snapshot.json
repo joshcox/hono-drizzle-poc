@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "8f6931bf-a45c-448c-be4f-e6eaedfbc3c3",
+  "id": "e7ef3c9a-86a6-442a-85ae-590138b8cc4c",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "todo": {
@@ -64,18 +64,18 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "todo_time_log": {
-      "name": "todo_time_log",
+    "todo_work_log": {
+      "name": "todo_work_log",
       "columns": {
-        "id": {
-          "name": "id",
+        "uuid": {
+          "name": "uuid",
           "type": "text",
           "primaryKey": true,
           "notNull": true,
           "autoincrement": false
         },
-        "todoId": {
-          "name": "todoId",
+        "todo_uuid": {
+          "name": "todo_uuid",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
@@ -92,7 +92,7 @@
           "name": "end",
           "type": "text",
           "primaryKey": false,
-          "notNull": true,
+          "notNull": false,
           "autoincrement": false
         }
       },

@@ -10,7 +10,8 @@
 
 import { DatabaseError } from "../error";
 import { DB } from "./database";
-import * as todo from "./repository/todo";
+import * as todo from "./repository/todo/todo";
+import * as todoWork from "./repository/todo/todo-work-log";
 import * as user from "./repository/user";
 
 /**
@@ -84,5 +85,6 @@ const connect = <T extends UnconnectedRepo>(db: DB, unconnectedRepo: T): Connect
  */
 export default (db: DB) => connect(db, {
   user,
-  todo
+  todo,
+  todoWork
 });

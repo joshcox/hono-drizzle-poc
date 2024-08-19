@@ -14,6 +14,24 @@ export type Todo = {
   updatedAt: Date;
 };
 
+export type TodoWorkLog = {
+  uuid: string;
+  todoUuid: string;
+  start: Date;
+  end: Date | null;
+};
+
+export type TodoAggregate = Todo & {
+  workLogs: TodoWorkLog[];
+};
+
+export const calculateWorkingTime = (workLogs: TodoWorkLog[]): number => {
+  return workLogs.filter(log => log.end !== null).reduce((acc, log) => {
+    const end = log.end ?? new Date();
+    return acc + (end.getTime() - log.start.getTime());
+  }, 0);
+};
+
 export interface UserRepositoryPort {
   readOne: (uuid: string) => Promise<User | undefined>;
   create: (user: Omit<User, 'uuid'>) => Promise<User>;
