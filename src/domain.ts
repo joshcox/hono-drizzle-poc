@@ -1,9 +1,3 @@
-export type User = {
-  uuid: string;
-  email: string;
-  name: string;
-};
-
 export type Todo = {
   uuid: string;
   title: string;
@@ -32,13 +26,58 @@ export const calculateWorkingTime = (workLogs: TodoWorkLog[]): number => {
   }, 0);
 };
 
-export interface UserRepositoryPort {
-  readOne: (uuid: string) => Promise<User | undefined>;
-  create: (user: Omit<User, 'uuid'>) => Promise<User>;
+export type ExerciseDB = {
+  uuid: string;
+  name: string;
+  description: null | string;
+  filename: string;
+  createdAt: Date;
+  updatedAt: Date;
 };
 
+namespace ExerciseService {
+  export type Exercise = {
+    slug: string;
+    name: string;
+    anatomicalName: string | null;
+    repType: "bilateral" | "unilateral" | "switch sides" | "multi-motion" | "alternating";
+    status: "active" | string;
+    difficulty: number | null;
+    chains: Pick<Chain, 'urn'>[];
+  };
+
+  export type Equipment = {
+    name: string;
+    urn: string;
+  };
+
+  export type Classification = {
+    name: string;
+    parent: string;
+  };
+
+  export type Family = {
+    urn: string;
+    name: string;
+    version: string;
+    type: 'strength' | 'mobility' | 'coordination';
+  }
+
+  export type Chain = {
+    urn: string;
+    name: string;
+    version: string;
+    families: Pick<Family, 'urn'>[];
+  }
+}
+
 export interface RepositoryPort {
-  user: UserRepositoryPort;
+  exercisedb: {
+    create: (db: ExerciseDB) => Promise<ExerciseDB>;
+    readOne: (uuid: string) => Promise<ExerciseDB>;
+    readAll: () => Promise<ExerciseDB[]>;
+    remove: (uuid: string) => Promise<void>;
+  },
   todo: {
     readOne: (uuid: string) => Promise<Todo>;
     readAll: () => Promise<Todo[]>;

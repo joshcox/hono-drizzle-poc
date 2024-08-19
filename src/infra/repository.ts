@@ -10,9 +10,9 @@
 
 import { DatabaseError } from "../error";
 import { DB } from "./database";
+import * as exercisedb from "./repository/exercisedb";
 import * as todo from "./repository/todo/todo";
 import * as todoWork from "./repository/todo/todo-work-log";
-import * as user from "./repository/user";
 
 /**
  * A constructor function that takes a database or transaction client and returns a function that
@@ -84,7 +84,7 @@ const connect = <T extends UnconnectedRepo>(db: DB, unconnectedRepo: T): Connect
  * ```
  */
 export default (db: DB) => connect(db, {
-  user,
   todo,
-  todoWork
+  todoWork,
+  exercisedb
 });

@@ -1,11 +1,11 @@
 import { serve } from "@hono/node-server";
-import apiV1 from "./app/api.v1";
+import exerciseManagement from "./app/exercise-management";
 import factory from "./app/factory";
 import web from "./app/web";
 
 const app = factory.createApp()
-  .route("/api/v1", apiV1)
-  .route("/", web);
+  .route("/todo", web)
+  .route("/", exerciseManagement);
 
 const server = serve({
   fetch: (request: Request) => app.fetch(request),

@@ -1,11 +1,5 @@
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
-export const user = sqliteTable("user", {
-  uuid: text("uuid").primaryKey(),
-  name: text("name").notNull(),
-  email: text("email").notNull(),
-});
-
 export const todo = sqliteTable("todo", {
   uuid: text("id").primaryKey(),
   title: text("title").notNull(),
@@ -21,4 +15,13 @@ export const todo_work_log = sqliteTable("todo_work_log", {
   todo_uuid: text("todo_uuid").notNull(),
   start: text("start").notNull(),
   end: text("end")
+});
+
+export const exercise_database = sqliteTable("exercise_database", {
+  uuid: text("uuid").primaryKey(),
+  name: text("name").notNull().unique(),
+  description: text("description"),
+  filename: text("filename").notNull().unique(),
+  createdAt: text("createdAt").notNull(),
+  updatedAt: text("updatedAt").notNull(),
 });

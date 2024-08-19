@@ -1,13 +1,25 @@
-import { DatabasePort, Todo, User } from "./domain";
+import { DatabasePort, Todo } from "./domain";
 import DatabaseManager from "./infra/database";
+import exerciseServiceCollection from "./infra/filesystem/exercise-service-collection";
+
+export class ExerciseManagement {
+  constructor(private database: DatabasePort) { }
+
+  query = {
+    getAllExerciseDBs: async () => this.database.repository.exercisedb.readAll(),
+    getExerciseServiceCollections: async () => exerciseServiceCollection(`/home/nerd/exercise-service`)
+  };
+
+  command = {
+
+  }
+}
 
 export default class Application {
   constructor(private database: DatabasePort) {
   }
 
   query = {
-    getUser: async (uuid: string) =>
-      this.database.repository.user.readOne(uuid),
     getTodo: async (uuid: string) =>
       this.database.repository.todo.readOne(uuid),
     getAllTodos: async () =>
@@ -36,7 +48,5 @@ export default class Application {
         return todo;
       });
     },
-    createUser: async (user: Omit<User, "uuid">) =>
-      this.database.repository.user.create(user),
   };
 }
