@@ -10,7 +10,7 @@ const ContactPage: FC = () => (
         want to place an order, or just want to say hello, please don't hesitate
         to reach out.
       </p>
-      <div class="bg-white p-6 rounded-lg shadow-md">
+      <div class="p-6 rounded-lg shadow-md">
         <p class="mb-2">
           Email: <Email mailto="contact@bluffcountrybeef.com" />
         </p>

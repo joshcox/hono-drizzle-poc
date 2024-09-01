@@ -14,7 +14,7 @@ const PurchasingGuidePage: FC = () => (
       </p>
 
       <h3 class="text-xl font-semibold mb-2">Terminology</h3>
-      <dl class="bg-white p-4 rounded-lg shadow-sm mb-4">
+      <dl class="p-4 rounded-lg shadow-sm mb-4">
         <Pair left="Live weight" right="the weight of the animal when it arrives for processing" />
         <Pair left="Dressed weight" right="the weight after the non-edible portions of the animal have been removed" />
         <Pair left="Packaged weight" right="the weight of the actual cuts of meat that you will bring home" />
