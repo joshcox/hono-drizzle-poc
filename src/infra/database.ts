@@ -1,4 +1,4 @@
-import Database from 'better-sqlite3';
+import Sqlite from 'better-sqlite3';
 import { BetterSQLite3Database, drizzle } from 'drizzle-orm/better-sqlite3';
 import * as schema from './database.schema';
 import repository from "./repository";
@@ -10,32 +10,28 @@ export type DatabaseT = BetterSQLite3Database<Schema>;
 export type DB = DatabaseT;
 export type TransactionFn<T> = (tx: DatabaseT, repository: Repository) => Promise<T>;
 
-export default class DatabaseManager implements Disposable {
+export default class Database {
   public client: DatabaseT;
   public repository: Repository;
 
-  private constructor(private sqliteDb: Database.Database) {
+  private constructor(sqliteDb: Sqlite.Database) {
     this.client = drizzle(sqliteDb, { schema });
     this.repository = repository(this.client);
   }
 
+  private static db: Sqlite.Database | null = null;
+
   static schema = schema;
 
   static connect = () => {
-    const sqliteDb = new Database(process.env.DATABASE_PATH);
-    return new DatabaseManager(sqliteDb);
+    this.db = new Sqlite(process.env.DATABASE_PATH);
+    return new Database(this.db);
   }
 
   static async transaction<T>(fn: TransactionFn<T>): Promise<T> {
-    const database = DatabaseManager.connect();
-    try {
-      return await database.client.transaction(async (tx) => fn(tx, repository(tx)));
-    } finally {
-      database[Symbol.dispose]();
-    }
-  }
-
-  [Symbol.dispose]() {
-    this.sqliteDb.close();
+    return Database
+      .connect()
+      .client
+      .transaction(async (tx) => fn(tx, repository(tx)));
   }
 }

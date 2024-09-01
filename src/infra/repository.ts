@@ -9,10 +9,8 @@
  */
 
 import { DatabaseError } from "../error";
+import * as exercisedb from "../exercise-package/infra/repository";
 import { DB } from "./database";
-import * as exercisedb from "./repository/exercisedb";
-import * as todo from "./repository/todo/todo";
-import * as todoWork from "./repository/todo/todo-work-log";
 
 /**
  * A constructor function that takes a database or transaction client and returns a function that
@@ -34,7 +32,7 @@ type UnconnectedRepo = { [name: string]: UnconnectedFn | UnconnectedRepo };
 /**
  * Get the shape of a connected repository given a RepoConfiguration.
  */
-type ConnectedRepo<T extends UnconnectedRepo> = {
+export type ConnectedRepo<T extends UnconnectedRepo> = {
   [K in keyof T]: T[K] extends UnconnectedFn
   ? ExtractInnerUnconnectedFn<T[K]>
   : T[K] extends UnconnectedRepo
@@ -60,7 +58,7 @@ const withDatabaseError = <T extends (...args: any) => any>(fn: T): T => {
  * Connects all repositories in a deep object to a database or transaction client.
  * The RepoConfiguration is a deep object of 
  */
-const connect = <T extends UnconnectedRepo>(db: DB, unconnectedRepo: T): ConnectedRepo<T> =>
+export const connect = <T extends UnconnectedRepo>(db: DB, unconnectedRepo: T): ConnectedRepo<T> =>
   <ConnectedRepo<T>>Object.fromEntries(
     Object.entries(unconnectedRepo).map(([k, v]) => [
       k,
@@ -84,7 +82,5 @@ const connect = <T extends UnconnectedRepo>(db: DB, unconnectedRepo: T): Connect
  * ```
  */
 export default (db: DB) => connect(db, {
-  todo,
-  todoWork,
   exercisedb
 });

@@ -1,13 +1,13 @@
 import { DatabasePort, Todo } from "./domain";
-import DatabaseManager from "./infra/database";
-import exerciseServiceCollection from "./infra/filesystem/exercise-service-collection";
+import Database from "./infra/database";
+import { getExerciseCollections } from "./infra/filesystem/exercise-service";
 
 export class ExerciseManagement {
   constructor(private database: DatabasePort) { }
 
   query = {
     getAllExerciseDBs: async () => this.database.repository.exercisedb.readAll(),
-    getExerciseServiceCollections: async () => exerciseServiceCollection(`/home/nerd/exercise-service`)
+    getExerciseServiceCollections: async () => getExerciseCollections(`/home/nerd/exercise-service`)
   };
 
   command = {
@@ -35,14 +35,14 @@ export default class Application {
     removeTodo: async (uuid: string) =>
       this.database.repository.todo.remove(uuid),
     startWork: async (uuid: string) => {
-      return await DatabaseManager.transaction(async (_, repository) => {
+      return await Database.transaction(async (_, repository) => {
         const todo = await repository.todo.setWorking(uuid, true);
         await repository.todoWork.startWork(todo, new Date());
         return todo;
       })
     },
     stopWork: async (uuid: string) => {
-      return await DatabaseManager.transaction(async (_, repository) => {
+      return await Database.transaction(async (_, repository) => {
         const todo = await repository.todo.setWorking(uuid, false);
         await repository.todoWork.stopWork(todo, new Date());
         return todo;

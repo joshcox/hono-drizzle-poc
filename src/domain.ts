@@ -35,7 +35,7 @@ export type ExerciseDB = {
   updatedAt: Date;
 };
 
-namespace ExerciseService {
+export namespace ExerciseService {
   export type Exercise = {
     slug: string;
     name: string;
