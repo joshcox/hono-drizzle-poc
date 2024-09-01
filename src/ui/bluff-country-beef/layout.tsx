@@ -19,6 +19,56 @@ export default function Layout({ children, title }: LayoutProps) {
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Merriweather&display=swap"
           rel="stylesheet"
         />
+        <style>{`
+          .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+          }
+          .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #4a5568;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+          }
+          .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+          }
+          .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #4a5568;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+          }
+          .timeline-item:nth-child(odd) {
+            left: 0;
+          }
+          .timeline-item:nth-child(even) {
+            left: 50%;
+          }
+          .timeline-item:nth-child(even)::after {
+            left: -16px;
+          }
+          .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+          }
+        `}</style>
       </head>
       <body class="flex flex-col min-h-screen font-serif text-gray-800 leading-relaxed">
         <header class="sticky top-0 bg-white shadow-md z-10">
