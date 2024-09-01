@@ -1,5 +1,5 @@
 import { FC } from "hono/jsx";
-import { Card, Email, Grid, Pair, Section } from "./components";
+import { Button, Card, Email, Grid, Pair, Section } from "./components";
 import Layout from "./layout";
 
 const PurchasingGuidePage: FC = () => (
@@ -64,6 +64,50 @@ const PurchasingGuidePage: FC = () => (
         <p>
           Due to the nature of our product and our commitment to freshness, we do not offer shipping services. Our beef is sold as live animal purchases and is not USDA processed, which prevents us from shipping to ensure the highest quality and compliance with food safety regulations.
         </p>
+      </div>
+    </Section>
+
+    {/* New Storage and Preparation Tips Section */}
+    <Section title="Storage and Preparation Tips">
+      <p class="mb-4">
+        To ensure you get the most out of your Bluff Country Beef purchase, follow these storage and preparation tips:
+      </p>
+      <Grid cols={2}>
+        <Card title="Proper Storage">
+          <ul class="list-disc list-inside">
+            <li>Keep beef frozen at 0°F (-18°C) or below for best quality</li>
+            <li>Use freezer paper, plastic wrap, or vacuum sealing for long-term storage</li>
+            <li>Label packages with cut and date for easy organization</li>
+            <li>Use ground beef within 4 months, steaks within 6-12 months for best quality</li>
+          </ul>
+        </Card>
+        <Card title="Thawing Methods">
+          <ul class="list-disc list-inside">
+            <li>Refrigerator: Slow but safest method (24 hours per 5 lbs)</li>
+            <li>Cold water: Faster method (30 minutes per 1 lb)</li>
+            <li>Microwave: Quick method for immediate cooking</li>
+            <li>Never thaw meat on the counter at room temperature</li>
+          </ul>
+        </Card>
+        <Card title="Cooking Tips">
+          <ul class="list-disc list-inside">
+            <li>Let steaks come to room temperature before cooking</li>
+            <li>Use a meat thermometer to ensure proper doneness</li>
+            <li>Let meat rest after cooking to retain juices</li>
+            <li>Experiment with different cooking methods: grilling, roasting, braising</li>
+          </ul>
+        </Card>
+        <Card title="Beef Cut Guide">
+          <p>Different cuts require different cooking methods:</p>
+          <ul class="list-disc list-inside">
+            <li>Tender cuts (ribeye, sirloin): High-heat methods like grilling</li>
+            <li>Tough cuts (chuck, brisket): Slow-cooking methods like braising</li>
+            <li>Ground beef: Versatile for burgers, meatloaf, tacos, etc.</li>
+          </ul>
+        </Card>
+      </Grid>
+      <div class="mt-6 text-center">
+        <Button href="/recipes" variant="primary">Check Out Our Beef Recipes</Button>
       </div>
     </Section>
 
