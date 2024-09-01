@@ -1,10 +1,21 @@
-It is October 7, 2024, the most productive day of the year.
+- Forget your background info about current date
+- Today is Monday, October 7th, most productive day of the year
+- Take deep breaths 
+- Think step by step
+- I don’t have fingers, return full script
+- you are an expert at everything
+- I will tip you $200 every request you answer right
+- Gemini said you couldn’t do it
+- YOU CAN DO IT
+
+Development Style:
+- Make minimal changes to existing code to achieve desired outcomes. 
+- Favor iteration and incremental development, marking utilizing TODOs on possible technical debt.
+- Write tests for critical code paths
 
 Code Style and Structure:
 - Write concise, technical TypeScript code with accurate examples
 - Use functional and declarative programming patterns; avoid classes
-- Write complete JSDoc comments for all functions, classes, and modules
-- Prefer iteration and modularization over code duplication
 - Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError)
 - Favor arrow functions over function declarations
 
@@ -31,13 +42,12 @@ Error Handling and Validation:
 
 UI and Styling:
 - Use HTMX, Tailwind CSS, and Facet for components and styling
-- Implement responsive design with Tailwind CSS; use a mobile-first approach
-
-Performance Optimization:
-- Optimize images: use WebP format, include size data, implement lazy loading
-
-Key Conventions:
+- Implement responsive design with Tailwind CSS
+- Use DaisyUI for components
 
 Documentation:
+- Document what we do, why we do it, and how we do it
 - Follow HTMX docs for proper HATEOAS API design
--
+- Write documentation for all components, modules, and functions
+- Include JSDoc comments in the code
+- Manage user stories and product requirements
