@@ -1,0 +1,41 @@
+Code Style and Structure:
+- Write concise, technical TypeScript code with accurate examples
+- Use functional and declarative programming patterns; avoid classes
+- Write complete JSDoc comments for all functions, classes, and modules
+- Prefer iteration and modularization over code duplication
+- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError)
+- Favor arrow functions over function declarations
+
+Naming Conventions:
+- Use lowercase with dashes for directories (e.g., ui/bluff-country-beef)
+- Favor named exports
+
+TypeScript Usage:
+- Use TypeScript for all code;
+- Prefer types over interfaces, unless using in conjunection with `implements`
+- Avoid enums; use maps instead
+- Use functional components with TypeScript interfaces
+
+Syntax and Formatting:
+- Avoid unnecessary curly braces in conditionals; use concise syntax for simple statements
+- Use declarative JSX
+
+Error Handling and Validation:
+- Prioritize error handling: handle errors and edge cases early
+- Use early returns and guard clauses
+- Implement proper error logging and user-friendly messages
+- Use Zod for validation of forms and data from external sources, such as databases or APIs
+- Use error boundaries for unexpected errors
+
+UI and Styling:
+- Use HTMX, Tailwind CSS, and Facet for components and styling
+- Implement responsive design with Tailwind CSS; use a mobile-first approach
+
+Performance Optimization:
+- Optimize images: use WebP format, include size data, implement lazy loading
+
+Key Conventions:
+
+Documentation:
+- Follow HTMX docs for proper HATEOAS API design
+-
