@@ -94,6 +94,21 @@ const HomePage: FC = () => (
       </div>
     </Section>
 
+    {/* New CTA Section */}
+    <Section title="">
+      <div class="bg-primary text-primary-content rounded-lg p-8 text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to Experience Premium Beef?</h2>
+        <p class="mb-6 text-lg">
+          Taste the difference of our farm-raised, ethically produced LIM-FLEX beef. 
+          Order now and bring the flavors of Bluff Country to your table!
+        </p>
+        <div class="flex justify-center space-x-4">
+          <Button href="/purchasing-guide" variant="secondary">View Purchasing Options</Button>
+          <Button href="/contact" variant="accent">Contact Us to Order</Button>
+        </div>
+      </div>
+    </Section>
+
     <Section title="Now accepting reservations!">
       <Card title="Reserve Your Beef Today!">
         <p>
