@@ -1,5 +1,5 @@
 import { FC } from "hono/jsx";
-import { Email, Pair, Section } from "./components";
+import { Card, Email, Grid, Pair, Section } from "./components";
 import Layout from "./layout";
 
 const PurchasingGuidePage: FC = () => (
@@ -33,6 +33,43 @@ const PurchasingGuidePage: FC = () => (
       <p class="bg-green-100 p-4 rounded-lg">
         Email us today at <Email mailto="contact@bluffcountrybeef.com" /> to
         place your deposit and reserve your beef!
+      </p>
+    </Section>
+
+    {/* New Pickup and Delivery Section */}
+    <Section title="Pickup and Delivery Options">
+      <p class="mb-4">
+        We offer flexible options for getting your Bluff Country Beef to your table. Choose the method that works best for you:
+      </p>
+      <Grid cols={2}>
+        <Card title="Farm Pickup">
+          <p>Pick up your order directly from our farm in Fillmore County. This option allows you to see where your beef comes from and meet the farmers who raised it.</p>
+          <ul class="list-disc list-inside mt-2">
+            <li>Available by appointment</li>
+            <li>Flexible scheduling</li>
+            <li>Tour our farm (optional)</li>
+          </ul>
+        </Card>
+        <Card title="Local Delivery">
+          <p>We offer delivery to select locations within a 50-mile radius of our farm.</p>
+          <ul class="list-disc list-inside mt-2">
+            <li>Minimum order: Quarter beef</li>
+            <li>Delivery fee may apply</li>
+            <li>Scheduled on specific dates each month</li>
+          </ul>
+        </Card>
+      </Grid>
+      <div class="mt-6 bg-base-200 p-4 rounded-lg">
+        <h3 class="text-xl font-semibold mb-2">Important Note on Shipping</h3>
+        <p>
+          Due to the nature of our product and our commitment to freshness, we do not offer shipping services. Our beef is sold as live animal purchases and is not USDA processed, which prevents us from shipping to ensure the highest quality and compliance with food safety regulations.
+        </p>
+      </div>
+    </Section>
+
+    <Section title="Ready to Order?">
+      <p class="bg-green-100 p-4 rounded-lg">
+        To place your order or discuss pickup/delivery options, please email us at <Email mailto="contact@bluffcountrybeef.com" /> or call us at (555) 123-4567. We'll be happy to answer any questions and help you with your purchase!
       </p>
     </Section>
   </Layout>
