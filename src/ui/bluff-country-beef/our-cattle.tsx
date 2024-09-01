@@ -71,6 +71,39 @@ const OurCattlePage: FC = () => (
         <img src="/images/cattle-grazing.jpg" alt="LIM-FLEX Cattle Grazing" class="w-full md:w-1/2 rounded-lg mt-4 md:mt-0" />
       </div>
     </Section>
+
+    {/* New Ethical Farming Practices Section */}
+    <Section title="Our Commitment to Ethical Farming">
+      <div class="bg-base-200 rounded-lg p-6">
+        <h3 class="text-2xl font-bold mb-4">Sustainable and Humane Practices</h3>
+        <p class="mb-4">
+          At Bluff Country Beef, we believe that ethical farming practices are not just good for our cattle, but also for our customers and the environment. Our commitment to sustainability and animal welfare is at the core of everything we do.
+        </p>
+        <Grid cols={2}>
+          <Card title="Pasture-Raised">
+            <p>Our cattle roam freely on lush pastures, enjoying a natural diet and plenty of fresh air and sunshine.</p>
+          </Card>
+          <Card title="Sustainable Land Management">
+            <p>We practice rotational grazing and other sustainable techniques to maintain soil health and biodiversity.</p>
+          </Card>
+          <Card title="Stress-Free Environment">
+            <p>We prioritize low-stress handling techniques to ensure the well-being of our cattle throughout their lives.</p>
+          </Card>
+          <Card title="Local Feed Production">
+            <p>Most of our cattle feed is grown right here on our farm, reducing transportation and supporting local agriculture.</p>
+          </Card>
+          <Card title="Humane Processing">
+            <p>We work with local, family-owned processors who share our commitment to humane and ethical practices.</p>
+          </Card>
+        </Grid>
+        <div class="mt-6">
+          <p class="mb-4">
+            Our ethical farming practices not only ensure the highest quality of life for our cattle but also result in superior beef for our customers. When you choose Bluff Country Beef, you're supporting a system that respects animals, the land, and our local community.
+          </p>
+          <Button href="/about#our-mission-and-values" variant="primary">Learn More About Our Values</Button>
+        </div>
+      </div>
+    </Section>
   </Layout>
 );
 
