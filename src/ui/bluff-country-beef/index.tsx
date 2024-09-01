@@ -4,19 +4,17 @@ import Layout from "./layout";
 
 const HomePage: FC = () => (
   <Layout title="Bluff Country Beef">
-    <Section title="Welcome to Bluff Country Beef">
-      <div class="hero bg-base-200 rounded-lg shadow-md">
-        <div class="hero-content text-center">
-          <div class="max-w-md">
-            <h1 class="text-5xl font-bold">Welcome to Bluff Country Beef</h1>
-            <p class="py-6">
-              We are a family-owned farm in Fillmore County, Minnesota, offering high-quality LIM-FLEX beef. Our cattle are raised with care on our family farm, ensuring flavorful, tender, and nutritious meat for your table.
-            </p>
-            <Button href="/about">Learn More About Us</Button>
-          </div>
+    <div class="hero min-h-screen" style="background-image: url(/images/farm-silhouette.jpg);">
+      <div class="hero-overlay bg-opacity-60"></div>
+      <div class="hero-content text-center text-neutral-content">
+        <div class="max-w-md">
+          <h1 class="mb-5 text-5xl font-bold">Welcome to Bluff Country Beef</h1>
+          <p class="mb-5">Premium Farm-Raised Beef, Straight from Our Family to Yours</p>
+          <p class="mb-5">Experience the rich flavors of our LIM-FLEX cattle, raised with care in the beautiful bluffs of Fillmore County, Minnesota.</p>
+          <Button href="/about">Learn More About Us</Button>
         </div>
       </div>
-    </Section>
+    </div>
 
     <Section title="Now accepting reservations!">
       <Card title="Reserve Your Beef Today!">

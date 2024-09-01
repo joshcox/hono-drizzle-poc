@@ -5,8 +5,8 @@
 ### User Story Checklist
 
 - [x] 1. Implement consistent navigation bar
-- [ ] 2. Create cohesive visual style with cards, grids, and buttons
-- [ ] 3. Develop consistent footer across all pages
+- [x] 2. Create cohesive visual style with cards, grids, and buttons
+- [x] 3. Develop consistent footer across all pages
 - [ ] 4. Design engaging hero section for Home page
 - [ ] 5. Create farm history and values overview on Home page
 - [ ] 6. Implement cattle quality section on Home page
