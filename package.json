@@ -12,7 +12,8 @@
     "migrate": "drizzle-kit --config ./db/drizzle.config.ts migrate",
     "migrate:generate": "drizzle-kit --config ./db/drizzle.config.ts generate",
     "migrate:generate:custom": "drizzle-kit --config ./db/drizzle.config.ts generate --custom",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwindcss -i ./src/styles/globals.css -o ./public/styles/tailwind.css --minify"
   },
   "keywords": [
     "beef",
@@ -21,7 +22,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@hono/node-server": "^1.12.0",
+    "@hono/node-server": "^1.12.2",
     "@hono/zod-validator": "^0.2.2",
     "better-sqlite3": "^11.1.2",
     "drizzle-orm": "^0.32.1",
@@ -34,8 +35,11 @@
     "@types/better-sqlite3": "^7.6.11",
     "@types/node": "^22.1.0",
     "@types/uuid": "^10.0.0",
+    "autoprefixer": "^10.4.20",
     "drizzle-kit": "^0.23.1",
     "node-gyp": "^10.2.0",
+    "postcss": "^8.4.42",
+    "tailwindcss": "^3.4.10",
     "ts-node": "^10.9.2",
     "typed-htmx": "^0.3.1",
     "typescript": "^5.5.4"
