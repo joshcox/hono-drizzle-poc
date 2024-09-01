@@ -37,6 +37,28 @@ const HomePage: FC = () => (
       </div>
     </Section>
 
+    <Section title="Our LIM-FLEX Cattle">
+      <div class="flex flex-col md:flex-row items-center bg-base-200 rounded-lg p-6">
+        <img src="/images/lim-flex-cattle.jpg" alt="LIM-FLEX Cattle" class="w-full md:w-1/2 rounded-lg mb-4 md:mb-0 md:mr-6" />
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Superior Quality Beef</h3>
+          <p class="mb-4">
+            Our LIM-FLEX cattle are a carefully bred combination of Limousin and Angus, resulting in beef that's both lean and well-marbled. This unique blend offers:
+          </p>
+          <ul class="list-disc list-inside mb-4">
+            <li>Exceptional tenderness and flavor</li>
+            <li>Optimal balance of lean meat and marbling</li>
+            <li>High nutritional value</li>
+            <li>Consistent quality in every cut</li>
+          </ul>
+          <p class="mb-4">
+            Raised on our family farm, our cattle graze on lush pastures and are fed a diet of hay and corn grown right here on our land. This ensures the highest quality beef for your table.
+          </p>
+          <Button href="/our-cattle" variant="primary">Learn More About Our Cattle</Button>
+        </div>
+      </div>
+    </Section>
+
     <Section title="Now accepting reservations!">
       <Card title="Reserve Your Beef Today!">
         <p>
