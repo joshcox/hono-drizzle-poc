@@ -59,6 +59,41 @@ const HomePage: FC = () => (
       </div>
     </Section>
 
+    <Section title="What Our Customers Say">
+      <div class="carousel w-full">
+        <div id="slide1" class="carousel-item relative w-full">
+          <Card title="The Johnson Family">
+            <p class="italic mb-4">"We've been buying beef from Bluff Country for years now. The quality is consistently excellent, and we love knowing exactly where our food comes from. It's a great value for our family!"</p>
+            <div class="text-right">- Sarah Johnson</div>
+          </Card>
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide3" class="btn btn-circle">❮</a> 
+            <a href="#slide2" class="btn btn-circle">❯</a>
+          </div>
+        </div> 
+        <div id="slide2" class="carousel-item relative w-full">
+          <Card title="Local Chef Mike">
+            <p class="italic mb-4">"As a chef, I'm always looking for the best ingredients. Bluff Country Beef's LIM-FLEX cattle produce some of the most flavorful and tender beef I've ever worked with. It's a game-changer for my restaurant."</p>
+            <div class="text-right">- Mike Anderson, Head Chef at The Bluff Bistro</div>
+          </Card>
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide1" class="btn btn-circle">❮</a> 
+            <a href="#slide3" class="btn btn-circle">❯</a>
+          </div>
+        </div> 
+        <div id="slide3" class="carousel-item relative w-full">
+          <Card title="Health-Conscious Consumer">
+            <p class="italic mb-4">"I appreciate how transparent Bluff Country Beef is about their farming practices. Knowing that the cattle are raised ethically and fed a natural diet gives me peace of mind about the meat I'm feeding my family."</p>
+            <div class="text-right">- Emily Thompson</div>
+          </Card>
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide2" class="btn btn-circle">❮</a> 
+            <a href="#slide1" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+      </div>
+    </Section>
+
     <Section title="Now accepting reservations!">
       <Card title="Reserve Your Beef Today!">
         <p>
