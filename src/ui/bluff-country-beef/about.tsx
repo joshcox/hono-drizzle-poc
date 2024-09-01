@@ -1,5 +1,5 @@
 import { FC } from "hono/jsx";
-import { Section } from "./components";
+import { Card, Grid, Section } from "./components";
 import Layout from "./layout";
 
 const AboutPage: FC = () => (
@@ -51,6 +51,39 @@ const AboutPage: FC = () => (
             <p>The Trogstad family continues to provide high-quality, ethically raised beef to the community.</p>
           </div>
         </div>
+      </div>
+    </Section>
+
+    {/* New Mission and Values Section */}
+    <Section title="Our Mission and Values">
+      <div class="mb-8">
+        <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+        <p class="mb-4">
+          At Bluff Country Beef, our mission is to provide high-quality, ethically raised beef to our community while preserving the land and agricultural heritage of Fillmore County for future generations. We strive to maintain the highest standards of animal welfare, environmental stewardship, and customer satisfaction.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-bold mb-4">Our Core Values</h3>
+        <Grid cols={2}>
+          <Card title="Quality">
+            <p>We are committed to producing the highest quality beef through careful breeding, ethical raising practices, and meticulous processing.</p>
+          </Card>
+          <Card title="Sustainability">
+            <p>We implement sustainable farming practices to preserve our land, protect natural resources, and minimize our environmental impact.</p>
+          </Card>
+          <Card title="Animal Welfare">
+            <p>We prioritize the health and well-being of our cattle, ensuring they are raised in humane conditions with proper care and nutrition.</p>
+          </Card>
+          <Card title="Community">
+            <p>We value our role in the local community and strive to contribute positively through job creation, education, and community involvement.</p>
+          </Card>
+          <Card title="Transparency">
+            <p>We believe in open communication with our customers about our farming practices, allowing them to make informed decisions about their food.</p>
+          </Card>
+          <Card title="Innovation">
+            <p>While respecting traditional farming methods, we continually seek innovative ways to improve our practices and product quality.</p>
+          </Card>
+        </Grid>
       </div>
     </Section>
 
