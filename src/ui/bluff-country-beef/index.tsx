@@ -16,6 +16,27 @@ const HomePage: FC = () => (
       </div>
     </div>
 
+    <Section title="Our Story">
+      <div class="flex flex-col md:flex-row items-center">
+        <img src="/images/farmers.jpg" alt="Randy and Tanna Trogstad" class="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-6" />
+        <div>
+          <p class="mb-4">
+            For over a century, the Trogstad family has been nurturing the land and raising cattle in the heart of Fillmore County, Minnesota. Our commitment to sustainable farming practices and animal welfare has been passed down through generations.
+          </p>
+          <p class="mb-4">
+            At Bluff Country Beef, we believe in:
+          </p>
+          <ul class="list-disc list-inside mb-4">
+            <li>Ethical and humane treatment of our animals</li>
+            <li>Sustainable farming practices that preserve our land for future generations</li>
+            <li>Producing high-quality, flavorful beef for our community</li>
+            <li>Maintaining the rich agricultural heritage of Bluff Country</li>
+          </ul>
+          <Button href="/about" variant="secondary">Read Our Full Story</Button>
+        </div>
+      </div>
+    </Section>
+
     <Section title="Now accepting reservations!">
       <Card title="Reserve Your Beef Today!">
         <p>
