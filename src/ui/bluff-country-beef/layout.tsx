@@ -6,6 +6,8 @@ type LayoutProps = PropsWithChildren<{
 }>;
 
 export default function Layout({ children, title }: LayoutProps) {
+  const currentYear = new Date().getFullYear();
+
   return (
     <html lang="en" class="h-full bg-green-50">
       <head>
@@ -51,7 +53,7 @@ export default function Layout({ children, title }: LayoutProps) {
           </div>
         </header>
         <main class="flex-grow container mx-auto px-4 py-8">{children}</main>
-        <Footer>&copy; 2023 Bluff Country Beef. All rights reserved.</Footer>
+        <Footer copyrightYear={currentYear} />
       </body>
     </html>
   );
