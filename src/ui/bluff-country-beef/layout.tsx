@@ -15,7 +15,7 @@ export default function Layout({ children, title }: LayoutProps) {
         {/* Add Google Fonts for improved typography */}
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Merriweather&display=swap" rel="stylesheet" />
       </head>
-      <body class="h-full font-serif text-gray-800 leading-relaxed">
+      <body class="flex flex-col min-h-screen font-serif text-gray-800 leading-relaxed">
         {/* Make header sticky and add box shadow */}
         <header class="sticky top-0 bg-white shadow-md z-10">
           <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -31,7 +31,7 @@ export default function Layout({ children, title }: LayoutProps) {
             </ul>
           </nav>
         </header>
-        <main class="container mx-auto px-4 py-8">
+        <main class="flex-grow container mx-auto px-4 py-8">
           {children}
         </main>
         <footer class="bg-green-800 text-white py-8">
