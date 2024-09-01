@@ -104,6 +104,58 @@ const OurCattlePage: FC = () => (
         </div>
       </div>
     </Section>
+
+    {/* New Animal Welfare Section */}
+    <Section title="Animal Welfare: Our Top Priority">
+      <div class="bg-base-200 rounded-lg p-6">
+        <h3 class="text-2xl font-bold mb-4">Ensuring the Well-being of Our Cattle</h3>
+        <p class="mb-4">
+          At Bluff Country Beef, the welfare of our cattle is paramount. We believe that happy, healthy animals produce the best quality beef, and we're committed to providing our cattle with the highest standard of care throughout their lives.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <p><strong>Spacious Pastures:</strong> Our cattle have ample space to roam, graze, and express natural behaviors.</p>
+          </div>
+          <div class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <p><strong>Natural Diet:</strong> We feed our cattle a diet that aligns with their natural nutritional needs, primarily grass with supplemental hay and corn.</p>
+          </div>
+          <div class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <p><strong>Low-Stress Handling:</strong> We use calm, quiet handling methods to minimize stress on our animals.</p>
+          </div>
+          <div class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <p><strong>Regular Health Checks:</strong> Our veterinarian conducts routine health checks to ensure the well-being of our herd.</p>
+          </div>
+          <div class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <p><strong>No Unnecessary Antibiotics:</strong> We only use antibiotics when medically necessary, never for growth promotion.</p>
+          </div>
+          <div class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <p><strong>Shelter from Elements:</strong> Our cattle have access to natural and man-made shelters to protect them from harsh weather.</p>
+          </div>
+        </div>
+        <p class="mb-4">
+          These practices not only ensure the health and happiness of our cattle but also contribute to the superior quality and flavor of our beef. When you choose Bluff Country Beef, you're supporting a system that prioritizes animal welfare at every step.
+        </p>
+        <Button href="/purchasing-guide" variant="primary">Learn How to Purchase Our Ethically Raised Beef</Button>
+      </div>
+    </Section>
   </Layout>
 );
 
