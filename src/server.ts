@@ -1,10 +1,8 @@
 import { serve } from "@hono/node-server";
-import apiV1 from "./app/api.v1";
 import factory from "./app/factory";
 import web from "./app/web";
 
 const app = factory.createApp()
-  .route("/api/v1", apiV1)
   .route("/", web);
 
 const server = serve({
