@@ -8,9 +8,9 @@ const HomePage: FC = () => (
       <div class="hero-overlay bg-opacity-60"></div>
       <div class="hero-content text-center text-neutral-content">
         <div class="max-w-md">
-          <h1 class="mb-5 text-5xl font-bold">Welcome to Bluff Country Beef</h1>
-          <p class="mb-5">Premium Farm-Raised Beef, Straight from Our Family to Yours</p>
-          <p class="mb-5">Experience the rich flavors of our LIM-FLEX cattle, raised with care in the beautiful bluffs of Fillmore County, Minnesota.</p>
+          <h1 class="mb-5 text-4xl font-bold">Welcome to our farm!</h1>
+          <p class="mb-5">Providing prime quality beef straight from our family to yours. </p>
+          <p class="mb-5">You'll be able to taste the difference as our Angus-Limousin cattle are bred naturally on pasture and spend their entire lives on our family farm in the beautiful bluff country of Fillmore County, Minnesota.</p>
           <Button href="/about">Learn More About Us</Button>
         </div>
       </div>
@@ -18,10 +18,10 @@ const HomePage: FC = () => (
 
     <Section title="Our Story">
       <div class="flex flex-col md:flex-row items-center">
-        <img src="/images/farmers.jpg" alt="Randy and Tanna Trogstad" class="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-6" />
+        <img src="/images/rolling-corn-fields.jpg" alt="Randy and Tanna Trogstad" class="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-6" />
         <div>
           <p class="mb-4">
-            For over a century, the Trogstad family has been nurturing the land and raising cattle in the heart of Fillmore County, Minnesota. Our commitment to sustainable farming practices and animal welfare has been passed down through generations.
+            For over a century, the Trogstad family has been farming the land where Bluff Country Beef is located. Our family's commitment to ethically raising high quality nutritious beef and using sustainable farming practices has been passed down through generations.
           </p>
           <p class="mb-4">
             At Bluff Country Beef, we believe in:
@@ -39,7 +39,7 @@ const HomePage: FC = () => (
 
     <Section title="Our LIM-FLEX Cattle">
       <div class="flex flex-col md:flex-row items-center bg-base-200 rounded-lg p-6">
-        <img src="/images/lim-flex-cattle.jpg" alt="LIM-FLEX Cattle" class="w-full md:w-1/2 rounded-lg mb-4 md:mb-0 md:mr-6" />
+        <img src="/images/steer.jpg" alt="LIM-FLEX Cattle" class="w-full md:w-1/2 rounded-lg mb-4 md:mb-0 md:mr-6" />
         <div>
           <h3 class="text-2xl font-bold mb-4">Superior Quality Beef</h3>
           <p class="mb-4">

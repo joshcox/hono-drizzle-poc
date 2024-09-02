@@ -6,7 +6,7 @@ const AboutPage: FC = () => (
   <Layout title="About Us | Bluff Country Beef">
     <Section title="Our Rich History">
       <div class="flex flex-col md:flex-row items-center mb-8">
-        <img src="/images/farm-historical.jpg" alt="Historical Trogstad Farm" class="w-full md:w-1/2 rounded-lg mb-4 md:mb-0 md:mr-6" />
+        <img src="/images/gravel-drive.jpg" alt="Historical Trogstad Farm" class="w-full md:w-1/2 rounded-lg mb-4 md:mb-0 md:mr-6" />
         <div>
           <h3 class="text-2xl font-bold mb-4">A Century of Farming Excellence</h3>
           <p class="mb-4">
@@ -89,7 +89,7 @@ const AboutPage: FC = () => (
 
     <Section title="Meet the Farmers">
       <div class="flex flex-col md:flex-row items-center">
-        <img src="/images/farmers.jpg" alt="Randy and Tanna Trogstad" class="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-6" />
+        <img src="/images/randy-calf.jpg" alt="Randy and Tanna Trogstad" class="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 md:mr-6" />
         <div>
           <p class="mb-4">
             Hi! We are Randy and Tanna Trogstad and we own and operate our family

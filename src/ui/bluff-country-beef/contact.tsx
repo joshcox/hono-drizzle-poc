@@ -28,7 +28,7 @@ const ContactPage: FC = () => (
             </div>
             <div>
               <label for="message" class="block mb-1">Message</label>
-              <textarea id="message" name="message" rows="4" class="w-full p-2 border rounded" required></textarea>
+              <textarea id="message" name="message" class="w-full p-2 border rounded" required></textarea>
             </div>
             <div>
               <button type="submit" class="btn btn-primary">Send Message</button>
